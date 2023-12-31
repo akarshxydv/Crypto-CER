@@ -16,8 +16,8 @@ class CoinRatesUseCase @Inject constructor(
     operator fun invoke(apiKey: String): Flow<ResponseState<CoinRateDto>> = flow {
         try {
             emit(ResponseState.Loading<CoinRateDto>())
-            val coinsRatess = coinRepo.getCoinRate(apiKey)
-            emit(ResponseState.Success<CoinRateDto>(coinsRatess))
+            val coinsRates = coinRepo.getCoinRate(apiKey)
+            emit(ResponseState.Success<CoinRateDto>(coinsRates))
         } catch (e: HttpException) {
             emit(ResponseState.Error<CoinRateDto>(e.localizedMessage ?: "An Unexpected Error"))
         } catch (e: IOException) {

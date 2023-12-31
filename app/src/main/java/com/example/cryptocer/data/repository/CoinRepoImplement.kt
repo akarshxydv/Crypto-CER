@@ -1,6 +1,6 @@
 package com.example.cryptocer.data.repository
 
-import com.example.cryptocer.data.CoinDeatails.CoinDetailDto
+import com.example.cryptocer.data.remote.dto.coinDeatails.CoinDetailDto
 import com.example.cryptocer.data.remote.CoinLayerApi
 import com.example.cryptocer.data.remote.dto.coinRates.CoinRateDto
 import com.example.cryptocer.domain.repository.CoinRepo

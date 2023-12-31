@@ -2,7 +2,7 @@ package com.example.cryptocer.viewModel.coinList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cryptocer.data.CoinDeatails.CoinDetailDto
+import com.example.cryptocer.data.remote.dto.coinDeatails.CoinDetailDto
 import com.example.cryptocer.data.remote.dto.coinRates.CoinRateDto
 import com.example.cryptocer.domain.model.CombinedCoinInfo
 import com.example.cryptocer.domain.use_cases.CoinListUseCase
@@ -21,14 +21,13 @@ class CoinListViewModel @Inject constructor(private val coinListUseCase: CoinLis
 
     private val coinValue = MutableStateFlow(CoinState())
     var _coinValue : StateFlow<CoinState> = coinValue
-    private var coinInfo:CoinDetailDto? = null
+    private var coinInfo: CoinDetailDto? = null
     private var coinRate:CoinRateDto?=null
 
     fun getAllCoin(apiKey:String)=viewModelScope.launch(Dispatchers.IO){
         coinListUseCase(apiKey = apiKey).collect {
             when(it){
                 is ResponseState.Success ->{
-                    //coinValue.value = CoinState(coinDetail = it.data)
                     coinInfo=it.data
                 }
                 is ResponseState.Loading ->{
@@ -77,14 +76,8 @@ class CoinListViewModel @Inject constructor(private val coinListUseCase: CoinLis
 
         return combinedList
     }
-    private fun sixDecimal(rate:Double?):String {
-        //val number = 123.4567890123456789
+    private fun sixDecimal(rate: Double?): String {
 
-        // Format the number using String.format with up to six decimal places
-        val formattedNumber = String.format("%.6f", rate)
-
-        // Print the formatted number
-        //println("Formatted Number: $formattedNumber")
-        return formattedNumber
+        return String.format("%.6f", rate)
     }
 }

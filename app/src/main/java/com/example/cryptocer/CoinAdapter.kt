@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
 class CoinAdapter(private var coinList:List<CombinedCoinInfo>):RecyclerView.Adapter<CoinAdapter.viewHolder>() {
 
     inner class viewHolder(view: View):RecyclerView.ViewHolder(view){
-        //val coinLayout: LinearLayout = view.findViewById(R.id.coinLinearLayout)
+
         val coinImage: ImageView = view.findViewById(R.id.imgCoinImage)
         val coinName: TextView = view.findViewById(R.id.txtCoinName)
         val coinRate:TextView=view.findViewById(R.id.txtCoinRate)

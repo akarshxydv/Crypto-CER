@@ -6,3 +6,4 @@ data class CombinedCoinInfo(
     val rate: String
 )
 
+

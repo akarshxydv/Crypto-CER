@@ -8,3 +8,4 @@ data class CoinRateDto(
     val terms: String,
     val timestamp: Int
 )
+

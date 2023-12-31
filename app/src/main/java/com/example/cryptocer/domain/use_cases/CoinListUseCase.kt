@@ -1,8 +1,7 @@
 package com.example.cryptocer.domain.use_cases
 
 
-import com.example.cryptocer.data.CoinDeatails.CoinDetailDto
-import com.example.cryptocer.domain.model.CombinedCoinInfo
+import com.example.cryptocer.data.remote.dto.coinDeatails.CoinDetailDto
 import com.example.cryptocer.domain.repository.CoinRepo
 import com.example.cryptocer.util.ResponseState
 import kotlinx.coroutines.flow.Flow

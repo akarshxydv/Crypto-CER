@@ -1,4 +1,4 @@
-package com.example.cryptocer.data.CoinDeatails
+package com.example.cryptocer.data.remote.dto.coinDeatails
 
 import com.example.cryptocer.data.remote.dto.coinDeatails.Coin
 
@@ -7,4 +7,5 @@ data class CoinDetailDto(
     val fiat: HashMap<String, String>,
     val success: Boolean
 )
+
 
